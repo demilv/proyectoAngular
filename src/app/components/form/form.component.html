@@ -1,1 +1,50 @@
-<p>form works!</p>
+<div class="centrar">
+    <h2 class="hform">Formulario de Registro:</h2>
+    <form novalidate class="form-container" (ngSubmit)="onSubmit()" [formGroup]="userlogForm">  	
+        <label for="name">Nombre:</label>
+        <input class="inputform" type="text" id="name" formControlName="name" />
+        <div class="formsdiv" *ngIf="userlogForm.get('name')?.errors?.['required'] &&
+            (userlogForm.get('name')?.dirty || submitted)">
+            Este campo es requerido.
+        </div>
+        <div class="formsdiv"  *ngIf="userlogForm.get('name')?.errors?.['minlength'] &&
+            (userlogForm.get('name')?.dirty || submitted)">
+            El nombre debe tener al menos 3 caracteres.
+        </div>
+        <div class="formsdiv"  *ngIf="userlogForm.get('name')?.errors?.['maxlength'] &&
+            (userlogForm.get('name')?.dirty || submitted)">
+            El nombre no puede tener más de 20 caracteres.
+        </div>
+
+        
+        <label class="labelsplit" for="password">Password:</label>
+        <input class="inputform" type="password" id="password" formControlName="password" />
+        <div class="formsdiv"  *ngIf="userlogForm.get('password')?.errors?.['required'] &&
+            (userlogForm.get('password')?.dirty || submitted)">
+            Este campo es requerido.
+        </div>
+        <div class="formsdiv"  *ngIf="userlogForm.get('password')?.errors?.['minlength'] &&
+            (userlogForm.get('password')?.dirty || submitted)">
+            La contraseña debe tener al menos 3 caracteres.
+        </div>
+        <div class="formsdiv"  *ngIf="userlogForm.get('password')?.errors?.['maxlength'] &&
+            (userlogForm.get('password')?.dirty || submitted)">
+            La contraseña no puede tener más de 20 caracteres.
+        </div>
+
+        <label class="labelsplit" for="passwordRepeat">Repeat password:</label>
+        <input class="inputform" type="password" id="passwordRepeat" formControlName="passwordRepeat" />
+        <div class="formsdiv"  *ngIf="!userlogForm.get('passwordRepeat')?.valid &&
+            (userlogForm.get('passwordRepeat')?.dirty || submitted)">
+            Tus contraseñas no coinciden.
+        </div>
+        
+        <div class="formsdiv"  *ngIf="showError" >
+            Ha ocurrido un error. Por favor, revisa los campos del formulario.
+        </div>
+
+        <button class="bottom" type="submit" [disabled]="!userlogForm.valid">Submit</button>
+        <p *ngIf="isLoggedIn()">Estas logueado!</p>
+
+    </form>
+</div>
