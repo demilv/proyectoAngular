@@ -14,6 +14,10 @@ const routes: Routes = [
     path: `list`, loadChildren: () =>
       import('./components/list/list.module').then(m => m.ListModule)
   },
+  {
+    path: `listchosen/:id`, loadChildren: () =>
+      import('./components/detail/detail.module').then(m => m.DetailModule)
+  },
   { path: ``, redirectTo: `home`, pathMatch: `full` }
 ];
 
