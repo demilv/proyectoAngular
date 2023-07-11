@@ -1,10 +1,45 @@
 .movie-list {
-    display: flex;
+    display:flex;
     flex-wrap: wrap;
+    padding: 10% 25% 0% 25%;
+    background-color: rgb(157, 185, 210);
+    
   }
   
 .movie-item {
+  display:flex;
+  justify-content: center;
   width: calc(33.33% - 20px); 
-  margin: 10px; 
+  margin-bottom: 15%;
+  margin-left: 11%; 
+  margin-right: 5%;
+  color: #fff;
+  background-color: #d1086c;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.movie-item button{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.movie-item a{
+  text-decoration: none !important;  
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: #27ff9e;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+
+.movie-item:hover {
+  background-color: #c020c0;
 }
   

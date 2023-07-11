@@ -1,9 +1,9 @@
 <div class="movie-list">
     <div  class="movie-item" *ngFor="let movie of movies">
-      <h2>{{ movie.title }}</h2>      
+           
   
       <button>
-        <a [routerLink]="['/listchosen', movie._id]" >Select</a>
+        <a [routerLink]="['/listchosen', movie._id]" >{{ movie.title }}</a>
       </button>
   
     </div>

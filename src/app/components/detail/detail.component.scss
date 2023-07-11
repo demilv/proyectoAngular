@@ -1,0 +1,39 @@
+  .movieDatos {
+    background-color: #df9e9e;
+    text-align: center;
+    padding: 9% 10% 9% 10%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movieDatos h1 {
+    font-size: 32px;
+    margin-bottom: 4%;
+    color: #d9f153;
+  }
+  
+  .movieDatos p {
+    font-size: 24px;
+    margin-bottom: 2%;
+    color: #116ddd;
+  }
+  
+  .movieDatos p:first-child {
+    margin-top: 0;
+  }
+  
+  .movieDatos p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .movieDatos > * {
+    border: 2px solid #1d1313;
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+  .cajita {
+    border: 2px solid #020202;
+    border-radius: 5px;
+    padding: 10px;
+  }
